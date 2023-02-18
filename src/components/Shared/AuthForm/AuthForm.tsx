@@ -1,10 +1,13 @@
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { REGISTRATION_VALIDATION } from '@/constants/registration';
 import { REGISTRY_STYLES } from '@/components/Shared/AuthForm/styles';
+import useAuth from '@/hooks/useAuth';
 
 type Inputs = {
   email: string;
   password: string;
+  firstname: string;
+  lastname: string;
 };
 
 interface Props {
@@ -18,10 +21,40 @@ const AuthForm = ({ signUp }: Props) => {
     formState: { errors }
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data, 'data');
+  const { loginHandler, registrationHandler } = useAuth();
+
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    if (signUp) {
+      await registrationHandler(data);
+    } else {
+      await loginHandler({ email: data.email, password: data.password });
+    }
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={REGISTRY_STYLES.FORM_WRAPPER}>
+      {signUp && (
+        <>
+          <input
+            type="text"
+            placeholder="First Name"
+            {...register('firstname', REGISTRATION_VALIDATION.FIRST_NAME)}
+            className={REGISTRY_STYLES.COMMON_INPUT}
+          />
+          {errors.firstname && (
+            <span className={REGISTRY_STYLES.ERROR_MESSAGE}>{errors.firstname.message}</span>
+          )}
+          <input
+            type="text"
+            placeholder="Last Name"
+            {...register('lastname', REGISTRATION_VALIDATION.LAST_NAME)}
+            className={REGISTRY_STYLES.COMMON_INPUT}
+          />
+          {errors.lastname && (
+            <span className={REGISTRY_STYLES.ERROR_MESSAGE}>{errors.lastname.message}</span>
+          )}
+        </>
+      )}
       <input
         type="email"
         placeholder="Your email"

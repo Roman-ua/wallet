@@ -3,6 +3,12 @@ export const REGISTRATION_VALIDATION = {
     required: { value: true, message: 'This field is required' },
     pattern: /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/i
   },
+  FIRST_NAME: {
+    required: { value: true, message: 'This field is required' }
+  },
+  LAST_NAME: {
+    required: { value: true, message: 'This field is required' }
+  },
   PASSWORD: {
     required: { value: true, message: 'This field is required' },
     minLength: { value: 6, message: 'This field must be at least 6 characters long' },
