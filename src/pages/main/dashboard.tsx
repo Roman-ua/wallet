@@ -1,5 +1,8 @@
 import React from 'react';
+import ProtectLayout from '@/components/Shared/ProtectLayout/ProtectLayout';
 
-export default function Dashboard() {
+const Dashboard = () => {
   return <div className="dark">Dashboard</div>;
-}
+};
+
+export default ProtectLayout(Dashboard);
