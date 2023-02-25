@@ -35,45 +35,53 @@ const AuthForm = ({ signUp }: Props) => {
     <form onSubmit={handleSubmit(onSubmit)} className={REGISTRY_STYLES.FORM_WRAPPER}>
       {signUp && (
         <>
-          <input
-            type="text"
-            placeholder="First Name"
-            {...register('firstname', REGISTRATION_VALIDATION.FIRST_NAME)}
-            className={REGISTRY_STYLES.COMMON_INPUT}
-          />
-          {errors.firstname && (
-            <span className={REGISTRY_STYLES.ERROR_MESSAGE}>{errors.firstname.message}</span>
-          )}
-          <input
-            type="text"
-            placeholder="Last Name"
-            {...register('lastname', REGISTRATION_VALIDATION.LAST_NAME)}
-            className={REGISTRY_STYLES.COMMON_INPUT}
-          />
-          {errors.lastname && (
-            <span className={REGISTRY_STYLES.ERROR_MESSAGE}>{errors.lastname.message}</span>
-          )}
+          <div className={REGISTRY_STYLES.INPUT_WRAPPER}>
+            <input
+              type="text"
+              placeholder="First Name"
+              {...register('firstname', REGISTRATION_VALIDATION.FIRST_NAME)}
+              className={REGISTRY_STYLES.COMMON_INPUT}
+            />
+            {errors.firstname && (
+              <span className={REGISTRY_STYLES.ERROR_MESSAGE}>{errors.firstname.message}</span>
+            )}
+          </div>
+          <div className={REGISTRY_STYLES.INPUT_WRAPPER}>
+            <input
+              type="text"
+              placeholder="Last Name"
+              {...register('lastname', REGISTRATION_VALIDATION.LAST_NAME)}
+              className={REGISTRY_STYLES.COMMON_INPUT}
+            />
+            {errors.lastname && (
+              <span className={REGISTRY_STYLES.ERROR_MESSAGE}>{errors.lastname.message}</span>
+            )}
+          </div>
         </>
       )}
-      <input
-        type="email"
-        placeholder="Your email"
-        {...register('email', REGISTRATION_VALIDATION.EMAIL)}
-        className={REGISTRY_STYLES.COMMON_INPUT}
-      />
-      {errors.email && (
-        <span className={REGISTRY_STYLES.ERROR_MESSAGE}>{errors.email.message}</span>
-      )}
+      <div className={REGISTRY_STYLES.INPUT_WRAPPER}>
+        <input
+          type="email"
+          placeholder="Your email"
+          {...register('email', REGISTRATION_VALIDATION.EMAIL)}
+          className={REGISTRY_STYLES.COMMON_INPUT}
+        />
+        {errors.email && (
+          <span className={REGISTRY_STYLES.ERROR_MESSAGE}>{errors.email.message}</span>
+        )}
+      </div>
 
-      <input
-        type="password"
-        placeholder="Your password"
-        {...register('password', REGISTRATION_VALIDATION.PASSWORD)}
-        className={REGISTRY_STYLES.COMMON_INPUT}
-      />
-      {errors.password && (
-        <span className={REGISTRY_STYLES.ERROR_MESSAGE}>{errors.password.message}</span>
-      )}
+      <div className={REGISTRY_STYLES.INPUT_WRAPPER}>
+        <input
+          type="password"
+          placeholder="Your password"
+          {...register('password', REGISTRATION_VALIDATION.PASSWORD)}
+          className={REGISTRY_STYLES.COMMON_INPUT}
+        />
+        {errors.password && (
+          <span className={REGISTRY_STYLES.ERROR_MESSAGE}>{errors.password.message}</span>
+        )}
+      </div>
 
       <input
         type="submit"
