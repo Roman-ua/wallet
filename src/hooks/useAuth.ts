@@ -4,7 +4,6 @@ import { LOGIN_PATH, MAIN_DASHBOARD_PATH, REGISTRATION_PATH } from '@/constants/
 import { useRouter } from 'next/router';
 import { clearStorage, setToLocalStorage } from '@/utils/localStorage';
 import useAuthStore from '@/stores/auth/authStore';
-import { authStoreInterface } from '@/stores/auth/interfaces';
 import { AUTH } from '@/constants/routes';
 
 const UseAuth = () => {
