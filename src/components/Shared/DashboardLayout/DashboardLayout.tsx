@@ -1,16 +1,22 @@
 import DASHBOARD_WRAPPER from './styles';
-import DashboardMenu from '@/components/Shared/DashboardMenu/DashboardMenu';
 import LogOutButton from '@/components/Shared/LogOutButton/LogOutButton';
+import useCurrency from "@/hooks/useCurrency";
+import {useEffect} from "react";
 
 interface Props {
   children: JSX.Element;
 }
 
 const DashboardLayout = ({ children }: Props) => {
+  const { getAllCurrencyWithPrices } = useCurrency();
+
+  useEffect(() => {
+    getAllCurrencyWithPrices()
+  }, []);
+
   return (
     <div className={DASHBOARD_WRAPPER.MODE}>
       <div className={DASHBOARD_WRAPPER.WRAPPER_SETTINGS}>
-        <DashboardMenu />
         {children}
         <LogOutButton />
       </div>

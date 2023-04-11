@@ -9,13 +9,19 @@ const Dashboard = () => {
 
   return (
     <DashboardLayout>
-      {Object.keys(userData).length > 0 ? (
-        <div className={DASHBOARD.USER_INFO_WRAPPER}>
-          First Name: {userData.firstname} Last Name: {userData.lastname}
+      <div className={DASHBOARD.USER_INFO_WRAPPER}>
+        <div className={DASHBOARD.USER_INFO_AVATAR}>GR</div>
+        <div className={DASHBOARD.USER_INFO_LABEL}>First Name:</div>
+        <div className={DASHBOARD.USER_INFO_VALUE}>Roman</div>
+        <div className={DASHBOARD.USER_INFO_LABEL}>Last Name:</div>
+        <div className={DASHBOARD.USER_INFO_VALUE}>Havrilchuk</div>
+        <div className={DASHBOARD.USER_INFO_LABEL}>Email:</div>
+        <div className={DASHBOARD.USER_INFO_VALUE}>gavrilchuk@gmail.com</div>
+        <div className={DASHBOARD.SUBSCRIPTION_TYPE_WRAPPER}>
+          <div className={DASHBOARD.USER_INFO_LABEL}>Subscription type:</div>
+          <div className={DASHBOARD.SUBSCRIPTION_TYPE}>FREE</div>
         </div>
-      ) : (
-        <div></div>
-      )}
+      </div>
     </DashboardLayout>
   );
 };

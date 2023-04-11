@@ -6,7 +6,7 @@ const LogOutButton = () => {
 
   return (
     <div onClick={logoutHandler} className={LOG_OUT_BTN.BTN}>
-      Log-out
+      Logout
     </div>
   );
 };

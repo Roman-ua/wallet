@@ -9,7 +9,11 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'auth-bg': "url('/auth/bg.svg')"
+        'auth-bg': "url('/auth/bg.svg')",
+        'dashboard-bg': "url('/dashboardMenuIcons/bg.jpg')"
+      },
+      backgroundImageDashboard: {
+
       },
       backgroundPosition: {
         bottom: 'bottom',
