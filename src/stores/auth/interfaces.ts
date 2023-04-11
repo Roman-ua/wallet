@@ -1,8 +1,8 @@
 export interface authStoreInterface {
   userData: object;
   authError: string;
-  setUserData: () => {};
-  setAuthError: () => {};
+  setUserData: () => never;
+  setAuthError: () => never;
 }
 
 export interface User {
