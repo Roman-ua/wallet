@@ -1,6 +1,5 @@
 import dashboard from '../../public/dashboardMenuIcons/Work.svg';
 import team from '../../public/dashboardMenuIcons/3User.svg';
-import stats from '../../public/dashboardMenuIcons/graph.svg';
 import instruction from '../../public/dashboardMenuIcons/Paper.svg';
 import help from '../../public/dashboardMenuIcons/lifebuoy.svg';
 
@@ -14,11 +13,6 @@ const DASHBOARD_MENU_ITEMS = [
     icon: team,
     title: 'Team',
     path: '/main/team'
-  },
-  {
-    icon: stats,
-    title: 'Stats',
-    path: '/main/stats'
   },
   {
     icon: instruction,
