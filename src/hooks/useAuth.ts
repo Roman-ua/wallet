@@ -20,8 +20,8 @@ const UseAuth = () => {
         await router.push(MAIN_DASHBOARD_PATH);
       }
     } catch (e: any) {
-      setAuthError(e.response.data.message);
-      console.log(e.response.data.message);
+      setAuthError(e.response?.data?.message);
+      console.log(e.response?.data?.message);
     }
   };
 

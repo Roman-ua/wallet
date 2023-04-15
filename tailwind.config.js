@@ -12,8 +12,8 @@ module.exports = {
         'auth-bg': "url('/auth/bg.svg')",
         'dashboard-bg': "url('/dashboardMenuIcons/bg.jpg')"
       },
-      backgroundImageDashboard: {
-
+      boxShadow: {
+        'mainShadow': '0 10px 15px -3px rgba(38, 198, 218, 0.3)',
       },
       backgroundPosition: {
         bottom: 'bottom',
