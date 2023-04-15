@@ -29,5 +29,6 @@ export const DASHBOARD = {
     'rounded-md hover:cursor-pointer hover:shadow-mainShadow ease-in duration-300',
   ADD_ADDRESS_ICON: 'text-slate-300 text-5xl leading-none pb-[5px] hover:border-cyan-400 hover:text-white-400',
   INFO_FOOTER_WRAPPER: 'bg-slate-50/5 rounded bg-gradient-to-r from-slate-800 to-slate-750 backdrop-blur-md ' +
-    'px-5 py-7 text-white flex flex-col items-start w-full max-h-[400px] mt-5'
+    'px-5 py-4 text-white flex flex-col items-start w-full max-h-[400px] mt-5',
+  INFO_LABEL: 'text-slate-600 text-sm mb-3'
 };
