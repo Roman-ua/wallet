@@ -28,7 +28,12 @@ const UseAuth = () => {
   const registrationHandler = async (userData: Registry) => {
     try {
       const response = await $API.post(REGISTRATION_PATH, userData);
-      console.log(response, 'registrationHandler');
+
+      if (response.status === 200) {
+        setToLocalStorage('token', response.data.token);
+        setUserData(response.data.user);
+        await router.push(MAIN_DASHBOARD_PATH);
+      }
     } catch (e) {
       console.log(e);
     }
