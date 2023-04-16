@@ -3,7 +3,7 @@ export const DASHBOARD = {
   USER_INFO_WRAPPER:
     'bg-slate-50/5 rounded bg-gradient-to-r from-slate-800 to-slate-750 backdrop-blur-md ' +
     'px-5 py-7 text-white flex flex-col items-start min-w-[250px] w-[20%] max-h-[400px]',
-  USER_INFO_AVATAR: 'bg-slate-500 rounded-full px-5 py-5 my-4',
+  USER_INFO_AVATAR: 'bg-slate-500 rounded-full w-[60px] h-[60px] my-4 flex items-center justify-center uppercase',
   USER_INFO_LABEL: 'text-slate-600 text-sm',
   USER_INFO_VALUE: 'text-xl mb-2',
   SUBSCRIPTION_TYPE_WRAPPER: 'mt-10 flex items-center',
