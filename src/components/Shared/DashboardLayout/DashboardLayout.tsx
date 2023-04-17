@@ -1,8 +1,8 @@
 import DASHBOARD_WRAPPER from './styles';
-import LogOutButton from '@/components/Shared/LogOutButton/LogOutButton';
 import useCurrency from "@/hooks/useCurrency";
 import {useEffect} from "react";
 import UseUserInfo from "@/hooks/useUserInfo";
+import useAddresses from "@/hooks/useAddresses";
 
 interface Props {
   children: JSX.Element[];
@@ -11,10 +11,12 @@ interface Props {
 const DashboardLayout = ({ children }: Props) => {
   const { getAllCurrencyWithPrices } = useCurrency();
   const { getUserInfo } = UseUserInfo();
+  const { getAllAddresses } = useAddresses();
 
   useEffect(() => {
-    getAllCurrencyWithPrices();
     getUserInfo();
+    getAllAddresses();
+    getAllCurrencyWithPrices();
   }, []);
 
   return (

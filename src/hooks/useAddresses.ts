@@ -1,20 +1,25 @@
 import $API from '@/http';
 import { ADDRESSES_PATH } from '@/constants/path';
+import useAddressesStore from "@/stores/addresses/addressesStore";
 
 const useAddresses = () => {
-  const createNewAddress = async (uid: string, currency: string) => {
+  const { setAddressesData } = useAddressesStore((state: any) => state);
+
+  const createNewAddress = async (currency: string) => {
     try {
-      const response = await $API.post(ADDRESSES_PATH, { userId: uid, currency });
+      const response = await $API.post(ADDRESSES_PATH, { currency });
       console.log(response, 'createNewAddress');
     } catch (e) {
       console.log(e);
     }
   };
 
-  const getAllAddresses = async (uid: string) => {
+  const getAllAddresses = async () => {
     try {
-      const response = await $API.get(`${ADDRESSES_PATH}/${uid}`);
-      console.log(response, 'getAllAddresses');
+      const response = await $API.get(`${ADDRESSES_PATH}`);
+      if (response.status === 200) {
+        setAddressesData(response.data?.addressesList);
+      }
     } catch (e) {
       console.log(e);
     }

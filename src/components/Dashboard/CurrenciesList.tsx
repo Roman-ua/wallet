@@ -4,7 +4,6 @@ import {Currency} from "@/stores/currencies/interfaces";
 
 const CurrenciesList = () => {
   const { currenciesList } = useCurrenciesStore((state: any) => state);
-  console.log(currenciesList, 'currenciesList');
 
   return <div className={DASHBOARD.CURRENCIES_LIST_WRAPPER}>
     <div className={DASHBOARD.CURRENCIES_INFO_LABEL}>Allowed currencies and exchange rate:</div>

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useState } from 'react';
 import ProtectLayout from '@/components/Shared/ProtectLayout/ProtectLayout';
 import DashboardLayout from '@/components/Shared/DashboardLayout/DashboardLayout';
 import UserCard from "@/components/Dashboard/UserCard";
@@ -7,8 +7,14 @@ import Transactions from "@/components/Dashboard/Transactions";
 import AddressesList from "@/components/Dashboard/AddressesList";
 import {DASHBOARD} from "@/styles/dashboard";
 import Info from "@/components/Dashboard/Info";
+import AddAddressModal from "@/components/Shared/Modals/AddAddressModal";
 
 const Dashboard = () => {
+  const [openAddAddressModal, setOpenAddressModal] = useState(false);
+  const modalHandler = () => {
+    setOpenAddressModal(!openAddAddressModal);
+  };
+
   return (
     <DashboardLayout>
       <div className={DASHBOARD.INFO_WRAPPER}>
@@ -16,8 +22,9 @@ const Dashboard = () => {
         <CurrenciesList />
         <Transactions />
       </div>
-      <AddressesList />
+      <AddressesList modalHandler={modalHandler} />
       <Info />
+      {openAddAddressModal ? <AddAddressModal modalHandler={modalHandler} /> : <></>}
     </DashboardLayout>
   );
 };
