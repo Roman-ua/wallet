@@ -14,6 +14,7 @@ const AddressesList = ({modalHandler}: any) => {
               <div key={item.currency} className={DASHBOARD.ADDRESS_WRAPPER}>
                 <div className={DASHBOARD.ADDRESS_TITLE}>{item.currency}</div>
                 <div className={DASHBOARD.ADDRESS_DESCRIPTION}>{item.address}</div>
+                <div className={DASHBOARD.ADDRESS_BALANCE}>{item.balance}</div>
               </div>
             )
         })}

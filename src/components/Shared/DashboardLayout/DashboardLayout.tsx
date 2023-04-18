@@ -13,10 +13,14 @@ const DashboardLayout = ({ children }: Props) => {
   const { getUserInfo } = UseUserInfo();
   const { getAllAddresses } = useAddresses();
 
+  const fetchDataHandler = async () => {
+    await getAllAddresses();
+    await getAllCurrencyWithPrices();
+    await getUserInfo();
+  }
+
   useEffect(() => {
-    getUserInfo();
-    getAllAddresses();
-    getAllCurrencyWithPrices();
+    fetchDataHandler().then();
   }, []);
 
   return (

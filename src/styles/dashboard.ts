@@ -31,7 +31,8 @@ export const DASHBOARD = {
   ADDRESS_WRAPPER: 'min-w-[250px] w-[250px] h-[130px] flex flex-col items-start justify-start ' +
     'rounded-md hover:cursor-pointer hover:shadow-mainShadow ease-in duration-300 ml-5 ' +
     'bg-gradient-to-r from-gray-900 to-gray-800 py-2 px-4',
-  ADDRESS_TITLE: 'uppercase font-bold mb-5',
+  ADDRESS_TITLE: 'uppercase font-bold mb-4',
+  ADDRESS_BALANCE: 'uppercase font-bold mt-2 ml-auto',
   ADDRESS_DESCRIPTION: 'text-sm',
   ADD_ADDRESS_ICON: 'text-slate-300 text-5xl leading-none pb-[5px] hover:border-cyan-400 hover:text-white-400',
   INFO_FOOTER_WRAPPER: 'bg-slate-50/5 rounded bg-gradient-to-r from-slate-800 to-slate-750 backdrop-blur-md ' +
@@ -46,5 +47,6 @@ export const DASHBOARD = {
   CURRENCY_ITEM_VALUE_MODAL_WRAPPER: 'flex items-center',
   CURRENCY_ITEM_VALUE_MODAL: 'text-white mr-2 text-sm',
   ADD_ADDRESS_BTN: 'rounded-md bg-cyan-600 ' +
-    'text-white py-1 px-2 hover:cursor-pointer hover:bg-cyan-500 ease-in-out duration-300 text-sm'
+    'text-white py-1 px-2 hover:cursor-pointer hover:bg-cyan-500 ease-in-out duration-300 text-sm',
+  MODAL_SCROLL_WRAPPER: 'overflow-x-scroll h-[270px]',
 };
